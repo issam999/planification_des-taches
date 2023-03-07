@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -72,7 +73,8 @@ public class Jwt_Service {
 
 	private Key getSignInKey() {
 		// TODO Auto-generated method stub
-		byte[] keyByte = Decoders.BASE64.decode(final_key);
+		byte[] keyByte = Decoders.BASE64
+				.decode(final_key);
 		return Keys.hmacShaKeyFor(keyByte);
 	}
 	

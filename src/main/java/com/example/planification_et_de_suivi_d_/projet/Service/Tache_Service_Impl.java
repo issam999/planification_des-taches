@@ -48,20 +48,7 @@ public class Tache_Service_Impl implements Tache_Service {
 		return Tache_repository.findAll();
 	}
 
-	/*@Override
-	public void update(String id, <Tache tache) {
-		
-		for (int i =0; i< tache.size();i++)
-		{
-			Tache t= tache.get(i);
-			if (t.getId().equals(id))
-			{
-				tache.set(i, t);
-			}
-			return ;	
-		}
-		
-	}
-	*/
-
+	
+	
 }
+

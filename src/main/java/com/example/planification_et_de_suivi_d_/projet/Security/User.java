@@ -29,6 +29,19 @@ public class User implements UserDetails  {
 	@Id
 	@GeneratedValue()
 	public  Integer id;
+	
+	public User() {
+		super();
+	}
+	public User(Integer id, String firstname, String lastname, String email, String password, Role role) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+	}
 	public Role getRole() {
 		return role;
 	}
@@ -70,7 +83,7 @@ public class User implements UserDetails  {
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return null  ;
+		return password  ;
 	}
 	@Override
 	public String getUsername() {

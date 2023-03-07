@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.planification_et_de_suivi_d_.projet.Models.EntityNotFoundException;
 import com.example.planification_et_de_suivi_d_.projet.Models.Membre;
-import com.example.planification_et_de_suivi_d_.projet.Models.Projet;
 import com.example.planification_et_de_suivi_d_.projet.Models.Tache;
 import com.example.planification_et_de_suivi_d_.projet.Service.Membre_Service;
 import com.example.planification_et_de_suivi_d_.projet.Service.Tache_Service;

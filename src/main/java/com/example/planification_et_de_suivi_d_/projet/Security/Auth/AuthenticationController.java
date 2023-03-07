@@ -20,13 +20,13 @@ public class AuthenticationController {
 	@PostMapping("/register")
 	public ResponseEntity<AuthenticationResponse>register(@RequestBody registerRequest request)
 	{
-		
+		System.out.println("aaaaaa");
 		return ResponseEntity.ok(authenticateService.register(request));
 	}
 	@PostMapping("/authenticate")
-	public String authenticate(@RequestBody AuthenticationRequest request)
+	public  String authenticate(@RequestBody AuthenticationRequest request)
 	{
-		System.out.println("reposne: " + authenticateService.authenticate(request).getToken() );
+		
 		return authenticateService.authenticate(request).getToken();
 	}
 

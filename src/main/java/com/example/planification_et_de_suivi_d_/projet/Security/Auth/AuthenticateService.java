@@ -38,12 +38,11 @@ public class AuthenticateService {
 		user1.setPassword(passwordEncoder.encode(request.getPassword()));
 		user1.setRole(Role.User);
 		repository.save(user1);
-		System.out.println("zzzzz");
 		  jwtService= new Jwt_Service();
 		 
-			System.out.println("zzzzz");
+			
 		  AuthenticationResponse response = new AuthenticationResponse();
-			System.out.println("zzzzz");
+			
 		  response.setToken(jwtService.generateToken(user1));
 			System.out.println(jwtService.generateToken(user1));
 		 
@@ -52,19 +51,17 @@ public class AuthenticateService {
 	}
 
 	public AuthenticationResponse authenticate(AuthenticationRequest request) {
-		authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
-				
-				
-				);
 		 User user = repository.findByEmail(request.getEmail());
-		   
-		    Jwt_Service jwtService = new Jwt_Service();
-		 
-		 
-		  AuthenticationResponse response = new AuthenticationResponse();
+			System.out.println("******************"+user.getEmail()+user.getPassword());
+
+		authenticationManager.authenticate(
+				new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
+		System.out.println("******************");
+		System.out.println("******************");
+
+		 System.out.println(request.getEmail());
+		   AuthenticationResponse response = new AuthenticationResponse();
 		  response.setToken(jwtService.generateToken(user));
-		  System.out.println("response "+response);
 		return response;
 		
 	}
